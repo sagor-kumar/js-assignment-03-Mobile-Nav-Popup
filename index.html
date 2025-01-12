@@ -36,6 +36,7 @@
 
       .nav {
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         justify-content: space-between;
       }
@@ -69,6 +70,7 @@
         top: 0;
         left: -100%;
         transition: all 0.5s linear;
+        z-index: 999;
       }
 
       .mobile-menu nav {
@@ -98,12 +100,26 @@
         margin-top: 50px;
       }
 
+      .close-div {
+        text-align: right;
+      }
+
       .close {
-        display: none;
+        color: white;
       }
 
       .open {
         display: block;
+      }
+
+      .overlay {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.589);
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease-out;
       }
 
       @media (max-width: 600px) {
@@ -194,7 +210,11 @@
           >
             <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
           </svg>
-          <!-- Menu Icon Close -->
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="close-div"> <!-- Menu Icon Close -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -204,11 +224,7 @@
             <path
               d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
             ></path>
-          </svg>
-        </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobile-menu">
+          </svg></div>
         <div class="logo"><h2>Adventure</h2></div>
         <nav>
           <a href="#">Home</a>
@@ -242,6 +258,11 @@
       </div>
     </header>
     <!-- header section ends -->
+     <!-- overlay section-->
+    <section>
+      <div id="overlay"></div>
+    </section>
+    <!-- offer section -->
     <section>
       <div class="offer">
         <button class="btn" id="btn">Open Modal</button>
@@ -255,6 +276,7 @@
         </div>
         </div>
     </section>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="overlay_different_btn.js"></script>
   </body>
 </html>
